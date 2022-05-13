@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>28번 정답</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>배송지 정보</legend>
+			<p>
+				배송방법 
+				<input type="radio" name="method" value="1" checked="checked">일반택배&espt;
+				<input type="radio" name="method" value="2">편의점택배&espt;
+				<input type="radio" name="method" value="3">해외택배
+			</p>
+			<p>
+				배송지 선택 
+				<input type="radio" name="place" value="1" checked="checked">기본배송지&espt;
+				<input type="radio" name="place" value="2">새로입력&espt;
+				<input type="radio" name="place" value="3">최근배송지
+			</p>
+			<p>받으실분 <input type="text"></p>
+			<p>
+				휴대폰번호
+				<select>
+					<option value="phone">010</option>
+					<option value="phone">012</option>
+					<option value="phone">013</option>
+					<option value="phone">014</option>
+				</select> -
+				<input type="text"> -
+				<input type="text">
+			</p>
+			<p>
+				유선전화(선택)
+				<select>
+					<option value="house">02</option>
+					<option value="house">031</option>
+					<option value="house">061</option>
+					<option value="house">051</option>
+				</select> -
+				<input type="text"> -
+				<input type="text">
+			</p>
+			<p>
+				주소 
+				<input type="text">
+				<a herf="https://m.epost.go.kr/mobile.retrieveNewAddressNewZipCdList.comm">우편번호검색</a>
+			</p>
+			<p>지번 주소 : <input type="text"></p>
+			<p>도로명 주소 : <input type="text"></p>
+			<p>나머지 주소 : <input type="text"></p>
+			<p>
+				배송 메세지 
+				<input type="radio" name="choose" value="1">예
+				<input type="radio" name="choose" value="2" checked="checked">아니오<br>
+				<input type="text" placeholder="택배기사님께 전달할 메세지를 남겨주세요.">
+			</p>
+		</fieldset>
+	</form>
+
+</body>
+</html>
