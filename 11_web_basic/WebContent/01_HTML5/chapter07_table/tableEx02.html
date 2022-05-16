@@ -22,7 +22,7 @@
 				tbody : 표의 본문
 				tfoot : 표의 바닥
 			
-				- sementic tag : 문서의 의미를 만들어 주는 구조
+				- sementic tag : 문서의 의미를 만들어 주는 구조(관리용 태그)
 				- CSS , Javascript , Jquery로 타겟을 지정하는 부분에 용이하다.
 				- thead요소에는 관용적으로 <th>태그를 사용한다.
 			
@@ -32,21 +32,26 @@
 		
 		[ 속성 ]
 		
-			border : 테이블의 테두리
+			border 		: 테이블의 테두리
 			bordercolor : 테이블의 테두리 색상 
-			width : 테이블 가로 크기 
-			height  : 테이블 세로 크기 
-			align : 정렬
-		    bgcolor : 배경색 
-		    colspan : 가로 합병(열 합병)
-			rowspan : 세로 합병(행 합병)
+			width 		: 테이블 가로 크기 
+			height 		: 테이블 세로 크기 
+			align 		: 정렬
+		    bgcolor 	: 배경색 
+		    colspan 	: 가로 합병(열 합병)
+			rowspan 	: 세로 합병(행 합병)
 			
 	 -->
 	 
 	 <table border="1">
 	 	<caption>테이블 예제</caption>
+	 	<colgroup>
+	 		<col style="background-color:yellow;">
+	 		<col style="background-color:lime;">
+	 		<col style="background-color:skyblue">
+	 	</colgroup>
 	 	<thead>	 		
-	 		<tr>
+	 		<tr style="background-color:pink;">
 	 			<th>헤더1</th>
 	 			<th>헤더2</th>
 	 			<th>헤더3</th>
