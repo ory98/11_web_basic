@@ -10,12 +10,69 @@
 		var name = document.f.name;
 		if (name.value == "") {
 			alert("이름을 입력하세요.");
-			name.focus(); // 선택자.focus(); > 선택된 엘리먼트에 focus이벤트를 적용한다. 
+			name.focus(); //선택자.focus(); 선택된 엘리먼트에 focus이벤트를 적용한다.
+			return false;
+		}
+		
+		var id = document.f.id;
+		if (id.value == "") {
+			alert("아이디를 입력하세요.");
+			id.focus(); //선택자.focus(); 선택된 엘리먼트에 focus이벤트를 적용한다.
+			return false;
+		}
+		
+		var pwd = document.f.pwd;
+		if (pwd.value == "") {
+			alert("비밀번호를 입력하세요.");
+			pwd.focus(); //선택자.focus(); 선택된 엘리먼트에 focus이벤트를 적용한다.
+			return false;
+		}
+		
+		var age = document.f.age;
+		if (age.value == "") {
+			alert("나이를 입력하세요.");
+			age.focus(); //선택자.focus(); 선택된 엘리먼트에 focus이벤트를 적용한다.
+			return false;
+		}
+		
+		var gender = document.f.gender;	
+		if (gender.value == "") {
+			alert("성별을 입력하세요.");
+			gender[0].focus(); //선택자.focus(); 선택된 엘리먼트에 focus이벤트를 적용한다.
+			return false;
+		}
+		
+		var hobbies = document.f.hobbies;
+		var isChecked = false;
+		for (var i = 0; i < hobbies.length; i++) {
+			if (hobbies[i].checked) {
+				isChecked = true;
+			}
+		}
+		if (!isChecked) {
+			alert("취미를 입력하세요.");
+			hobbies[0].focus(); //선택자.focus(); 선택된 엘리먼트에 focus이벤트를 적용한다.
+			return false;
+		}	
+		
+		var travel = document.f.travel;
+		if (travel.value == "없음") {
+			alert("여행지를 입력하세요.");
+			travel.focus(); //선택자.focus(); 선택된 엘리먼트에 focus이벤트를 적용한다.
+			return false;
+		}
+		
+		var memo = document.f.memo;
+		if (memo.value == "") {
+			alert("메모를 입력하세요.");
+			memo.focus(); //선택자.focus(); 선택된 엘리먼트에 focus이벤트를 적용한다.
 			return false;
 		}
 		
 		return true;
+		
 	}
+
 
 </script>
 </head>
@@ -25,6 +82,7 @@
 		return 값이 false일 경우 폼데이터를 서버로 전송하지 않으며 
 		return 값이 true일 경우 폼데이터를 서버로 전송한다.
 	-->
+	
 	<form name="f" onsubmit="return formValidationCheck()">
 		<fieldset>
 			<legend>회원가입 폼</legend>
