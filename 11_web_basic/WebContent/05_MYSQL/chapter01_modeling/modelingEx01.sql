@@ -53,16 +53,16 @@ USE TEST_DB;
 	[ 테이블 생성 형식 ]
 
 	- CREATE TABLE TABLE_NAME(FIELD1 TYPE, FIELD2 TYPE , .....);
-	- 테이블명은 관용적으로 앞에 T_ 또는 TB_를 붙인다.
+	- 테이블명은 관용적으로 앞에 T_ 또는 앞뒤에 TB_를 붙이기도 한다.
     - 테이블명은 단수형태로 사용한다. 
 	- 데이터 타입
-		숫자 : INT
+		숫자 : INT, BIGINT
 		문자열 : VARCHAR(최대길이) 
 				최대길이를 초과할 수 없으며 최대길이보다 적은 데이터가 입력되면 입력된 데이터만큼의 자원이 할당된다.
 				""  , '' 모두 사용가능하다.
         실수  : DOUBLE
 		문자  : CHAR
-		날짜  : DATE
+		날짜  : DATE(년/월/일), DATETIME(시간도 포함), TIMESTAMP(현재시간기록)
      
 	   EX)
 	   CREATE TABLE T_ADMIN_GOODS (
@@ -73,6 +73,22 @@ USE TEST_DB;
 	   
 */
 
+/*
+
+ 	[ 자주 사용되는 컬럼명 약어 ]
+ 	
+ 	1. CD > CODE  (ORDER_CD , ITEM_CD , PARTNER_CD , DEPT_CD)
+ 	2. NM > NAME  (ORDER_NM , ITEM_NM , PARTNER_NM , DEPT_NM)
+ 	3. DT > DATE  (JOIN_DT , REG_DT , START_DT , MODIFY_DT , ENROLL_DT)
+ 	4. NO > NUMBER (REPLY_NO , BOARD_NO , NOTICE_NO) 
+ 	5. CNT > COUNT (LOGIN_USER_CNT , CLIENT_CNT , MANAGER_CNT , EMPLOYEE_CNT)
+ 	6. AMT > AMOUNT (STOCK_AMT , RENTAL_FEE_AMT , PO_AMT)
+ 	7. QTY > QUANTITY (ORDER_QTY , PRODT_ORDER_QTY , ORDER_QTY_IN_BASE_UNIT , PROD_QTY_IN_ORDER_UNIT)
+ 	8. FL  > FLAG (ENROLL_FT , CONFIRM_FT , DEL_FT) 
+ 	9. YN  > YES OR NO (AGREE_YN)
+ 	
+ */
+ 
 CREATE TABLE T_MEMBER (
 
 	MEMBER_ID 		VARCHAR(10),
@@ -85,7 +101,6 @@ CREATE TABLE T_MEMBER (
 
 );
 
-
 /*
 
 	[ 테이블 관련 정보 확인 명령어 ]
@@ -95,14 +110,14 @@ CREATE TABLE T_MEMBER (
     EX) DESC T_SHOPPING_GOODS;
     
 */ 
-
+DESC T_MEMBER;
 /*
 			
 	[ 테이블 삭제 형식 ]
 	- DROP TABLE TABLE_NAME;
 
 */
-
+DROP TABLE T_MEMBER;
 /*
 	
 	[ 데이터 베이스 삭제 형식 ]
@@ -110,7 +125,7 @@ CREATE TABLE T_MEMBER (
 		
 		EX) DROP DATABASE TEST_DB;
 */
-
+DROP DATABASE TEST_DB;
 /*	
 			
 	 +@) 단축키 
