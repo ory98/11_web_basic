@@ -39,6 +39,14 @@ SET
         REG_DT = NOW()
 WHERE 
 		PRODUCT_CD = 'P10003';
+
+UPDATE 
+		PRODUCT
+SET
+		PRICE = PRICE + 1000,
+        REG_DT = NOW()
+WHERE 
+		PRODUCT_CD = 'P10003';
         
 UPDATE 
 		PRODUCT
