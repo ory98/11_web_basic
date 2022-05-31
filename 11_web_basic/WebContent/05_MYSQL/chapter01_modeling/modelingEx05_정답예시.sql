@@ -5,8 +5,6 @@
 CREATE DATABASE BOOKSHOP;
 USE BOOKSHOP;
 
-
-
 /*    
     2) MANAGER 테이블을 생성하기.
     	
