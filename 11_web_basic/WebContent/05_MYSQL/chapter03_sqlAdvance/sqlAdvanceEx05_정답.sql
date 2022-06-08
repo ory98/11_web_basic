@@ -91,17 +91,79 @@ WHERE
 
 # 한번에 제일 많은 수량을 주문한 주문 코드 조회하기.
 
+SELECT 
+		ORDER_CD
+FROM
+		ORDER_TB
+WHERE
+		ORDER_GOODS_QTY = (SELECT 
+									MAX(ORDER_GOODS_QTY) 
+						   FROM 
+									ORDER_TB);
 
-
-# 한번에 제일 많은 수량을 주문한 상품명 조회하기.
 		
-        
+		
+# 한번에 제일 많은 수량을 주문한 상품명 조회하기.
+
+SELECT MAX(ORDER_GOODS_QTY) FROM ORDER_TB;
+SELECT PRODUCT_CD FROM ORDER_YB WHERE ORDER_GOODS_QTY;
+
+SELECT
+		PRODUCT_NM
+FROM
+		PRODUCT_TB
+WHERE 
+		PRODUCT_CD = (SELECT 
+							PRODUCT_CD 
+					  FROM 
+							ORDER_TB
+					  WHERE 
+							ORDER_GOODS_QTY = (SELECT 
+														MAX(ORDER_GOODS_QTY) 
+                                                FROM 
+														ORDER_TB));
+		
         
 # 한번에 제일 많은 수량을 주문한 유저의 모든 정보 조회하기.
 
-                                
+SELECT MAX(ORDER_GOODS_QTY) FROM ORDER_TB;
+SELECT MEMBER_ID FROM ORDER_TB WHERE ORDER_GOODS_QTY;
+
+SELECT
+		*
+FROM
+		MEMBER_TB
+WHERE 
+		MEMBER_ID = (SELECT 
+							MEMBER_ID
+					FROM 
+							ORDER_TB 
+                    WHERE 
+							ORDER_GOODS_QTY = (SELECT 
+														MAX(ORDER_GOODS_QTY) 
+												FROM 
+														ORDER_TB));
                                 
 # 배송이 완료된 상품의 회원테이블의 모든 정보 조회하기.
+
+SELECT
+		DELIVERY_STATUS
+FROM
+		ORDER_TB
+WHERE 
+		DELIVERY_STATUS = '배송완료';
+        
+SELECT
+		*
+FROM
+		MEMBER_TB
+WHERE 
+		MEMBER_ID IN (SELECT
+							MEMBER_ID
+					 FROM
+							ORDER_TB
+					 WHERE 
+							DELIVERY_STATUS = '배송완료');
 
 
 
