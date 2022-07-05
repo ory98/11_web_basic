@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>document.ready 함수</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+
+	// jQuery에서 사용하는 함수로 자바스크립트의 window.onload와 같은 기능을 한다.
+	jQuery(document).ready(function(){
+		$("#test").css("background" , "lime");
+	});
+	
+	$(document).ready(function(){
+		$("#test").css("background" , "lime");
+	});
+	
+	$().ready(function(){
+		$("#test").css("background" , "lime");
+	});
+	
+	$(function(){
+		$("#test").css("background" , "lime");
+	});
+	
+</script>
+</head>
+<body>
+	<div id="test">test page</div>
+</body>
+</html>
+
