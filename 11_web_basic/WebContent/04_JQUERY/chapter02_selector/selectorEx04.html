@@ -28,11 +28,11 @@
 	 
 	 $(document).ready(function(){
 		
-		$("#btn1").click(function() {
+		$("#btn1").click(function() { // 직계자식만 선택 (>)
 			$("#header > h1").css("color","purple"); 
 		});
 		
-		$("#btn2").click(function() {
+		$("#btn2").click(function() { // 하위 요소 모두 포함 
 			$("#section h1").css("color","gray");	
 		});
 		
